@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitter:wght@400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --tw-teal: #013D4F;
+  --tw-coral: #F2607A;
+  --tw-blue: #46A1AD;
+  --tw-green: #6A9E78;
+  --tw-purple: #634F7D;
+}
+
+body {
+  font-family: 'Bitter', serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-color: #f5f7fb;
+  color: #333;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dark-mode body {
+  background-color: #121212;
+  color: #f0f0f0;
+}
+
+/* Loader animation */
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  animation: bounce 1.5s infinite ease-in-out;
+}
+
+.dot:nth-child(1) {
+  animation-delay: 0s;
+  background-color: var(--tw-coral);
+}
+
+.dot:nth-child(2) {
+  animation-delay: 0.2s;
+  background-color: var(--tw-blue);
+}
+
+.dot:nth-child(3) {
+  animation-delay: 0.4s;
+  background-color: var(--tw-green);
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+}
+
+.dark-mode ::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Focus styles */
+*:focus {
+  outline: 2px solid var(--tw-coral);
+  outline-offset: 2px;
+}
+
+/* Smooth transitions */
+button, a, input, textarea {
+  transition: all 0.2s ease;
+}
